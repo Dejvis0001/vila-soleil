@@ -192,7 +192,52 @@ header .navbar .link-btn {
 /*Index-About*/
 /*Index-Rooms*/
 /*Index-Gallery*/
+.slideshow {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slideshow-container {
+    display: flex;
+    animation: slideshow 60s linear infinite; /* Adjust the duration for the speed of the slideshow */
+  }
+
+  .slide {
+    flex: 0 0 auto;
+  }
+  .slide img{height: 300px;width: auto;}
+
+  @keyframes slideshow {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 /*Index - Ameneties*/
+#our-amenities .single-service::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px dashed #ffffff;}
+#our-ameneties .single-service {
+    text-align: center;
+    border: 1px solid #949494;
+    margin-bottom: 30px;
+    padding: 35px 0;
+    padding-top: 35px;
+    padding-top: 40px;
+    transition: all .4s ease;
+    position: relative;
+    background: #b5956c;}
+#our-ameneties .single-service:hover {background: black;border-color: black;}
+#our-ameneties .single-service i {color: white;font-size: 30px;transition: color 0.5s ease;}
+#our-ameneties .single-service:hover i,#our-ameneties .single-service:hover h3 {color: #b5956c;}
 /*Index-Testimonials*/
 /*Gallery*/
 .gallery-section {
@@ -250,6 +295,33 @@ header .navbar .link-btn {
 }
 
 /*Rooms*/
+.room1-carousel {
+    width: 100%;
+    height: 100%;
+}
+
+.room2-carousel {
+    width: 100%;
+    height: 100%;
+}
+
+.swp {
+    height: 400px;
+    width: 100%;
+}
+.swiper-slide.slide {
+    text-align: center; 
+}
+
+.swiper-slide.slide img {
+    width: 100%;
+    max-height: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+
+
 /*Jumbotron*/
 /*General*/
 .bg-images {
@@ -272,6 +344,90 @@ header .navbar .link-btn {
 }
 
 /*Button*/
+button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+.container .link-btn,.link-btn {
+    text-align: center;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    color: rgb(255, 147, 79);
+}
+
+.link-btn::before {
+    content: "";
+    position: absolute;
+    height: 150px;
+    width: 50px;
+    background: #fff;
+    right: -40px;
+    top: -40px;
+    transform: rotate(37deg);
+    transition: all 0.3s;
+    opacity: 0.3;
+}
+.link-btn:hover:before {right: 105%;}
+
+
+
+.butonn {
+    cursor: pointer;
+    position: relative;
+    padding: 10px 24px;
+    font-size: 18px;
+    color: rgb(193, 163, 98);
+    border: 2px solid rgb(193, 163, 98);
+    border-radius: 34px;
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+  }
+  
+  .butonn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: rgb(193, 163, 98);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .butonn:hover::before {
+    scale: 3;
+  }
+  
+  .butonn:hover {
+    color: #212121;
+    scale: 1.1;
+    box-shadow: 0 0px 20px rgba(193, 163, 98,0.4);
+    border: 0px;
+  }
+  
+  .butonn:active {
+    scale: 1;
+  }
+  
 /*Animation*/
 .fadeinleft {
     opacity: 0;
@@ -324,27 +480,33 @@ header .navbar .link-btn {
 }
 
 
-.Section-Info{
+.Section-Info {
     position: relative;
 }
-.Section-Info-col{
+
+.Section-Info-col {
     padding: 20px 0 20px 0;
     background-color: white;
     border: #00000042 1px solid;
 }
-.Section-Info-col:hover{
+
+.Section-Info-col:hover {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
-    border:#B18F62 1px double;
+    border: #B18F62 1px double;
 }
+
 .Section-Info-col:hover i {
     color: #B18F62;
- }
- .Section-Info-col:hover h3 {
-     color: #B18F62;
-  }
-  .Section-Info-col:hover p {
+}
+
+.Section-Info-col:hover h3 {
     color: #B18F62;
- }
+}
+
+.Section-Info-col:hover p {
+    color: #B18F62;
+}
+
 /*Footer*/
 .footer_wrapper {
     background: #ffffff;
@@ -382,10 +544,12 @@ header .navbar .link-btn {
 .Navlist {
     padding-left: 0 !important;
 }
+
 .Navlist li {
     display: inline;
     margin: 10px;
 }
+
 .Navlist a {
     text-decoration: none;
     font-size: 18px;
@@ -395,9 +559,11 @@ header .navbar .link-btn {
     padding: 10px;
     color: white;
 }
+
 .Navlist a:hover {
     color: yellow;
 }
+
 /* Media Queries */
 @media only screen and (max-width: 1200px) {
     ::-webkit-scrollbar {

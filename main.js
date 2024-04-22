@@ -93,121 +93,39 @@ document.addEventListener("DOMContentLoaded", function () {
     swiper.slidePrev();
   });
 });
-//Rooms
 document.addEventListener("DOMContentLoaded", function () {
-  // Initialize Owl Carousel for room and gallery carousels
-  initializeCarousel(".room1-carousel");
+  initializeSwiperCarousel(".room1-carousel");
 
-  // Function to initialize Owl Carousel
-  function initializeCarousel(selector) {
-    var owl = $(selector);
-
-    owl.owlCarousel({
-      loop: true,
-      margin: 30,
-      autoplay: true,
-      autoplayTimeout: 6000,
-      autoplayHoverPause: false,
-      nav: true,
-      navText: [
-        '<i class="fa fa-angle-left"></i>',
-        '<i class="fa fa-angle-right"></i>',
-      ],
-      responsive: {
-        0: {
-          items: 1,
-        },
-        600: {
-          items: 2,
-        },
-        1000: {
-          items: 3,
-        },
-      },
-    });
-
-    // Get the next and prev buttons
-    var nextButton = owl.parent().find(".owl-next");
-    var prevButton = owl.parent().find(".owl-prev");
-
-    // Attach click event handlers
-    nextButton.on("click", function () {
-      owl.trigger("next.owl.carousel");
-    });
-
-    prevButton.on("click", function () {
-      owl.trigger("prev.owl.carousel");
-    });
-
-    // Handle carousel loop
-    owl.on("translated.owl.carousel", function (event) {
-      var items = event.item.count; // Total number of items in the carousel
-      var currentItem = event.item.index; // Index of the current item
-      if (currentItem === items - 1) {
-        // If the last item is reached, go back to the first item
-        setTimeout(function () {
-          owl.trigger("to.owl.carousel", [0, 500]);
-        }, 6000); // Delay to match autoplayTimeout
-      }
-    });
+  // Function to initialize Swiper Carousel
+  function initializeSwiperCarousel(selector) {
+      var swiper = new Swiper(selector, {
+          loop: true,
+          autoplay: {
+              delay: 6000,
+              disableOnInteraction: false,
+          },
+          navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+          },
+      });
   }
 });
-
 document.addEventListener("DOMContentLoaded", function () {
-  // Initialize Owl Carousel for room and gallery carousels
-  initializeCarousel(".room2-carousel");
+  initializeSwiperCarousel(".room2-carousel");
 
-  // Function to initialize Owl Carousel
-  function initializeCarousel(selector) {
-    var owl = $(selector);
-
-    owl.owlCarousel({
-      loop: true,
-      margin: 30,
-      autoplay: true,
-      autoplayTimeout: 6000,
-      autoplayHoverPause: false,
-      nav: true,
-      navText: [
-        '<i class="fa fa-angle-left"></i>',
-        '<i class="fa fa-angle-right"></i>',
-      ],
-      responsive: {
-        0: {
-          items: 1,
-        },
-        600: {
-          items: 2,
-        },
-        1000: {
-          items: 3,
-        },
-      },
-    });
-
-    // Get the next and prev buttons
-    var nextButton = owl.parent().find(".owl-next");
-    var prevButton = owl.parent().find(".owl-prev");
-
-    // Attach click event handlers
-    nextButton.on("click", function () {
-      owl.trigger("next.owl.carousel");
-    });
-
-    prevButton.on("click", function () {
-      owl.trigger("prev.owl.carousel");
-    });
-
-    // Handle carousel loop
-    owl.on("translated.owl.carousel", function (event) {
-      var items = event.item.count; // Total number of items in the carousel
-      var currentItem = event.item.index; // Index of the current item
-      if (currentItem === items - 1) {
-        // If the last item is reached, go back to the first item
-        setTimeout(function () {
-          owl.trigger("to.owl.carousel", [0, 500]);
-        }, 6000); // Delay to match autoplayTimeout
-      }
-    });
+  // Function to initialize Swiper Carousel
+  function initializeSwiperCarousel(selector) {
+      var swiper = new Swiper(selector, {
+          loop: true,
+          autoplay: {
+              delay: 6000,
+              disableOnInteraction: false,
+          },
+          navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+          },
+      });
   }
 });
